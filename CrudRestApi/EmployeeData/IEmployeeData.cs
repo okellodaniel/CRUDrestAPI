@@ -10,7 +10,7 @@ namespace CrudRestApi.EmployeeData
 
         Employee GetEmployee(Guid id);
 
-        Employee AddEmployee(Employee employee);
+        void AddEmployee(Employee employee);
         
         void DeleteEmployee(Employee employee);
         

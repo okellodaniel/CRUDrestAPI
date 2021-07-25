@@ -25,20 +25,25 @@ namespace CrudRestApi.EmployeeData
             return employees;
         }
 
-        public Employee AddEmployee(Employee employee)
+        public void AddEmployee(Employee employee)
         {
-            throw new NotImplementedException();
+            employee.Id = Guid.NewGuid(); 
+            employees.Add(employee);
         }
 
         public void DeleteEmployee(Employee employee)
         {
-            throw new NotImplementedException();
+            employees.Remove(employee);
         }
 
         public Employee EditEmployee(Employee employee)
         {
-            throw new NotImplementedException();
+            var existingEmployee = GetEmployee(employee.Id);
+            existingEmployee.Name = employee.Name;
+            return existingEmployee;
         }
+
+        
 
         public Employee GetEmployee(Guid id)
         {
