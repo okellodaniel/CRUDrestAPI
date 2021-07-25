@@ -68,12 +68,10 @@ namespace CrudRestApi.Controllers
             if (existingEmployee != null)
             {
                 employee.Id = existingEmployee.Id;
-                _employeeData.DeleteEmployee(employee);
-                return Ok();
+                _employeeData.EditEmployee(employee);
+              
             }
-
-            return NotFound($"Employee with the Id:{id} could not be found");
-
+            return Ok(employee);
         }
         
     }
